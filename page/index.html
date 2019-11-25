@@ -5,6 +5,8 @@
     <title>index</title>
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/index.css">
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
 </head>
 <body>
     <header class="header">
@@ -24,9 +26,9 @@
     </header>
     <div class="content">
         <div class="content_left">
-            <div class="every_day">
+            <div class="every_day" id="every_day">
                 <span>每日一句</span>
-                <p>sachgasjcgashgchas</p>
+                <p v-text="getContent"></p>
             </div>
             <div class="article_list">
                 <div class="article">
@@ -118,5 +120,6 @@
         </ul>
         <p>Copyright © 2010-2019</p>
     </footer>
+    <script src="./js/index.js"></script>
 </body>
 </html>
