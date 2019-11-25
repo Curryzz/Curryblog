@@ -57,12 +57,12 @@
             </div>
         </div>
         <div class="content_right">
-            <div class="right_module">
+            <div class="right_module" id="random_tags">
                 <div>随机标签云</div>
-                <a href="">asd</a>
-                <a href="">scca</a>
-                <a href="">cvad</a>
-                <a href="">efef</a>
+                <a href="" v-for="tag in tags" :style="{color:randomColor(),fontSize:randomSize()}">{{tag}}</a>
+<!--                <a href="">scca</a>-->
+<!--                <a href="">cvad</a>-->
+<!--                <a href="">efef</a>-->
             </div>
 
             <div class="right_module">
@@ -120,6 +120,7 @@
         </ul>
         <p>Copyright © 2010-2019</p>
     </footer>
+    <script src="./js/base.js"></script>
     <script src="./js/index.js"></script>
 </body>
 </html>
