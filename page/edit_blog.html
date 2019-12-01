@@ -19,10 +19,25 @@
 
     <script>
       function submit() {
-          alert("提交")
           var content = $('#editor').html();
           var title = $('#title').val();
           var tags = $('#tags').val();
+          var data = {
+              content:content
+          }
+        $.ajax({
+          url:'/editBlog?title='+title+'&tags='+tags,
+          method:'POST',
+          data:data,
+          success:function (resp) {
+            var result = JSON.parse(resp);
+            alert(result.msg);
+            $('#editor').html('')
+          },
+          error:function (err) {
+            console.log(err)
+          }
+        })
 
       }
 

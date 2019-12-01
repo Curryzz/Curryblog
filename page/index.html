@@ -28,32 +28,15 @@
         <div class="content_left">
             <div class="every_day" id="every_day">
                 <span>每日一句</span>
-                <p v-text="getContent"></p>
+                <p v-html="getContent"></p>
             </div>
-            <div class="article_list">
-                <div class="article">
-                    <a href="" class="article_title">
-                        redis命令笔记
-                    </a>
-                    <p class="articel_content">
-                        查找某个key是否存在：Redis::hkeys(‘xxxx’); 命令中是 hkeys xxxx删除hash中某个field：Redis::hdel(‘Key_Name’, ‘xxxx’); 命令中是hdel Key_Name xxxxx 查看列表的所有数据：lrange key_name 0 -1查看列表长度：llen key_name把redis中的查询结果导出到文件，比如列表数据：./redis-cli -a 123456 lrange...
-                    </p>
-                    <div class="articel_foot">
-                        发布于2019-09-21 |  浏览(1,503) | Tags：beatsx
-                    </div>
+            <div class="article_list" id="article_list">
+                <div class="article" v-for="item in articleList">
+                    <a href="" class="article_title">{{item.title}}</a>
+                    <p class="articel_content">{{item.content}}</p>
+                    <div class="articel_foot">发布于{{item.date}} |  浏览({{item.views}}) | Tags：{{item.tags}}</div>
                 </div>
 
-                <div class="article">
-                    <a href="" class="article_title">
-                        redis命令笔记
-                    </a>
-                    <p class="articel_content">
-                        查找某个key是否存在：Redis::hkeys(‘xxxx’); 命令中是 hkeys xxxx删除hash中某个field：Redis::hdel(‘Key_Name’, ‘xxxx’); 命令中是hdel Key_Name xxxxx 查看列表的所有数据：lrange key_name 0 -1查看列表长度：llen key_name把redis中的查询结果导出到文件，比如列表数据：./redis-cli -a 123456 lrange...
-                    </p>
-                    <div class="articel_foot">
-                        发布于2019-09-21 |  浏览(1,503) | Tags：beatsx
-                    </div>
-                </div>
             </div>
         </div>
         <div class="content_right">

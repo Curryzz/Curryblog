@@ -54,6 +54,7 @@
 
 .article .articel_content{
     padding: 0 15px 20px;
+    word-break: break-all;
 }
 
 .article .articel_foot{
